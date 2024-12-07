@@ -6,10 +6,9 @@ document.getElementById("getWeatherBtn").addEventListener("click", async functio
     }
 
     const weatherResultDiv = document.getElementById("weatherResult");
-    weatherResultDiv.innerHTML = "Loading..."; // Show loading text
+    weatherResultDiv.innerHTML = "Loading..."; 
 
     try {
-        // Fetch weather data from your API
         const response = await fetch(`https://weatherwebappgd-ahfgauf7cugthyb2.canadacentral-01.azurewebsites.net//api/weather?city=${city}`);
 
         if (!response.ok) {
@@ -18,9 +17,8 @@ document.getElementById("getWeatherBtn").addEventListener("click", async functio
 
         const data = await response.json();
 
-        // Show the weather information
         const weather = data.weather[0].description;
-        const temperature = (data.main.temp - 273.15).toFixed(2); // Convert from Kelvin to Celsius
+        const temperature = (data.main.temp - 273.15).toFixed(2); 
 
         weatherResultDiv.innerHTML = `
             <p><strong>Weather:</strong> ${weather}</p>
