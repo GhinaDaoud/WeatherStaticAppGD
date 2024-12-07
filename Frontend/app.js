@@ -10,7 +10,7 @@ document.getElementById("getWeatherBtn").addEventListener("click", async functio
 
     try {
         // Fetch weather data from your API
-        const response = await fetch(`/api/weather?city=${city}`);
+        const response = await fetch(`https://weatherwebappgd-ahfgauf7cugthyb2.canadacentral-01.azurewebsites.net//api/weather?city=${city}`);
 
         if (!response.ok) {
             throw new Error("Failed to fetch weather data.");
